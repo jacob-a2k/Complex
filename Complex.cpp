@@ -6,7 +6,7 @@ class Complex {
 	int real;
 	int imagine;
 public:
-	Complex(int x, int y) :real(x), imagine(y){}
+	Complex(int x, int y) :real(x), imagine(y) {}
 };
 
 int main()
