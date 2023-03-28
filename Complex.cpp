@@ -7,9 +7,9 @@ class Complex {
 	int imagine;
 public:
 	Complex(int r, int i) :real(r), imagine(i) {}
-	Complex(Complex& source);
+	Complex(const Complex& source);
 };
-Complex::Complex(Complex& source) {
+Complex::Complex(const Complex& source) {
 	real = source.real;
 	imagine = source.imagine;
 }
