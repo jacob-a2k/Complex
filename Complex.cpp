@@ -31,8 +31,8 @@ Complex Complex::multiply(const Complex& source) const {
 }
 void Complex::divide(const Complex& source)  {		// nie dziala
 	
-	int divisor = source.real * source.real + source.imagine * source.imagine + (source.real * source.imagine + source.imagine * source.real);
-	cout << this->real * source.real + this->imagine * source.imagine << "/" << divisor << " + " << this->real * source.imagine + this->imagine * source.real << "/" << divisor << "i" << endl;
+	int divisor = (source.real * source.real + source.imagine * source.imagine);
+	cout << this->real * source.real + this->imagine * source.imagine << "/" << divisor << " + " << this->real * source.imagine * (-1) + this->imagine * source.real << "/" << divisor << "i" << endl;
 	//return Complex((this->real * source.real + this->imagine * source.imagine) / divisor, (this->real * source.imagine + this->imagine * source.real) / divisor);
 }
 /*
