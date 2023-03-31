@@ -3,10 +3,10 @@
 using namespace std;
 
 class Complex {
-	int real;
-	int imagine;
+	float real;
+	float imagine;
 public:
-	Complex(int r, int i) :real(r), imagine(i) {}
+	Complex(float r, float i) :real(r), imagine(i) {}
 	Complex();
 	Complex(const Complex& source);
 	Complex add(const Complex& source) const;
@@ -30,7 +30,7 @@ Complex Complex::multiply(const Complex& source) const {
 }
 void Complex::divide(const Complex& source)  {
 	
-	int divisor = pow(source.real,2) + pow(source.imagine,2);
+	float divisor = pow(source.real,2) + pow(source.imagine,2);
 	cout << "(" << (this->real * source.real + this->imagine * source.imagine) << "/" << divisor << ") + (" << (this->real * source.imagine * (-1) + this->imagine * source.real) << "/" << divisor << ")i" << endl;
 }
 void Complex::display() const {
