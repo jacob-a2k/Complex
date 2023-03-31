@@ -42,7 +42,7 @@ int main()
 	Complex one(6, -2);
 	Complex four(3, 4);
 	Complex two(one);
-	Complex result = one.add(two);
+	Complex result = one.multiply(four);
 	//result = one.subtract(two);
 	//result = one.multiply(four);
 	result.display();
