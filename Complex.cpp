@@ -13,7 +13,7 @@ public:
 	Complex add(const Complex& source) const;
 	Complex subtract(const Complex& source) const;
 	Complex multiply(const Complex& source) const;
-	Complex divide(const Complex& source) ;
+	Complex divide(const Complex& source)const ;
 	void display()const;
 };
 Complex::Complex(const Complex& source) {
@@ -29,7 +29,7 @@ Complex Complex::subtract(const Complex& source) const {
 Complex Complex::multiply(const Complex& source) const {
 	return	Complex(this->real * source.real + this->imagine * source.imagine * (-1), this->real * source.imagine + this->imagine * source.real);
 }
-Complex Complex::divide(const Complex& source)  {
+Complex Complex::divide(const Complex& source)const  {
 	float divisor = pow(source.real,2) + pow(source.imagine,2);
 	return Complex((this->real * source.real + this->imagine * source.imagine)/divisor, (this->real * source.imagine * (-1) + this->imagine * source.real)/divisor);
 }
