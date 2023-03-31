@@ -13,7 +13,6 @@ public:
 	Complex subtract(const Complex& source) const;
 	Complex multiply(const Complex& source) const;
 	void divide(const Complex& source) ;
-	//void operator=(const Complex& source);
 	void display()const;
 };
 Complex::Complex(const Complex& source) {
@@ -34,12 +33,6 @@ void Complex::divide(const Complex& source)  {
 	int divisor = pow(source.real,2) + pow(source.imagine,2);
 	cout << "(" << (this->real * source.real + this->imagine * source.imagine) << "/" << divisor << ") + (" << (this->real * source.imagine * (-1) + this->imagine * source.real) << "/" << divisor << ")i" << endl;
 }
-/* 
-void Complex::operator=(const Complex& source) {
-	this->real = source.real;
-	this->imagine = source.imagine;
-}
-*/
 void Complex::display() const {
 	cout << this->real << "," << this->imagine <<"i" << endl;
 }
