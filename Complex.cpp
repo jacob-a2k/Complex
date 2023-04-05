@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <cassert>
 
 using namespace std;
 
@@ -14,6 +15,7 @@ public:
 	Complex multiply(const Complex& source) const;
 	Complex divide(const Complex& source)const ;
 	Complex& operator=(const Complex& source);
+	bool operator==(const Complex& source)const;
 	void display()const;
 };
 Complex::Complex(const Complex& source) {
@@ -34,10 +36,14 @@ Complex Complex::divide(const Complex& source)const  {
 	return Complex((this->real * source.real + this->imagine * source.imagine)/divisor, (this->real * source.imagine * (-1) + this->imagine * source.real)/divisor);
 }
 Complex& Complex::operator=(const Complex& source) {
-	cout << "Overload execute" << endl; // just to test it works
+	cout << "Overload operator= execute!" << endl; // just to test it works
 	this->real = source.real;
 	this->imagine = source.imagine;
 	return *this;
+}
+bool Complex::operator==(const Complex& source) const {
+	cout << "Overload operator== execute!" << endl;
+	return real == source.real && imagine == source.imagine;
 }
 void Complex::display() const {
 	cout << this->real << "," << this->imagine <<"i" << endl;
@@ -53,7 +59,8 @@ int main()
 	//result = one.multiply(four);
 	//result = one.divide(four);
 	result = four;
-	result.display();
+	assert(one == two);	// assert execute
+		result.display();
 
 	return 0;
 }
